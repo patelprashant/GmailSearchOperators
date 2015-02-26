@@ -1,0 +1,26 @@
+<ion-view view-title="Description">
+  <ion-content class="padding">
+      <div class="card">
+        <div class="item item-text-wrap">
+          {{data.definition}}
+        </div>
+        <div class="item item-text-wrap" ng-bind-html="data.examples">
+
+        </div>
+        <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#">
+              <i class="icon ion-thumbsup"></i>
+              Like
+            </a>
+            <a class="tab-item" href="#">
+              <i class="icon ion-chatbox"></i>
+              Comment
+            </a>
+            <a class="tab-item" href="#">
+              <i class="icon ion-share"></i>
+              Share
+            </a>
+          </div>
+      </div>
+  </ion-content>
+</ion-view>

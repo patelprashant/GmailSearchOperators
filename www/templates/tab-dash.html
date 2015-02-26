@@ -1,0 +1,26 @@
+<ion-view view-title="Operators">
+  <ion-content class="padding">
+      <ion-list>
+        <ion-item class="item-icon-right" ng-repeat="(key, item) in list"  href="#/tab/dash/{{key}}">
+          <p ng-bind-html="item.operator" href=""></p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+      </ion-list>
+<!--    <div class="list card">
+      <div class="item item-divider">Health</div>
+      <div class="item item-body">
+        <div>
+          You ate an apple today!
+        </div>
+      </div>
+    </div>-->
+<!--    <div class="list card">
+      <div class="item item-divider">Upcoming</div>
+      <div class="item item-body">
+        <div>
+          You have <b>29</b> meetings on your calendar tomorrow.
+        </div>
+      </div>
+    </div>-->
+  </ion-content>
+</ion-view>
