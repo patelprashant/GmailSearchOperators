@@ -1,25 +1,11 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $firebase) {
-    var apiURL = 'https://search-gmail.firebaseio.com/operators';
-    var ref = new Firebase(apiURL);
-    var sync = $firebase(ref);
-
-    var list = sync.$asArray();
-    list.$loaded().then(function() {
-      $scope.list = list;
-    });
+.controller('DashCtrl', function($scope, Operators) {
+    $scope.list = Operators.all();
 })
 
-.controller('DashDetailCtrl', function($scope, $firebase, $stateParams){
-    var apiURL = 'https://search-gmail.firebaseio.com/operators/' + $stateParams.itemId;
-    var ref = new Firebase(apiURL);
-    var sync = $firebase(ref);
-
-    var list = sync.$asObject();
-    list.$loaded().then(function() {
-      $scope.data = list;
-    });
+.controller('DashDetailCtrl', function($scope, $firebase, $stateParams, Operators){
+    $scope.data = Operators.get($stateParams.itemId);
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

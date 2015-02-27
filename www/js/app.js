@@ -1,3 +1,8 @@
+var Constants = {
+    apiHost: 'https://search-gmail.firebaseio.com/',
+    apiEndPoint: 'operators/'
+  };
+
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
@@ -12,7 +17,9 @@ angular.module('starter', [
     , 'firebase'
 ])
 
+
 .run(function($ionicPlatform) {
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

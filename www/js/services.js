@@ -93,4 +93,23 @@ angular.module('starter.services', [])
       return friends[friendId];
     }
   }
+})
+
+.factory('Operators', function($firebase) {
+    var apiURL = Constants.apiHost + Constants.apiEndPoint;
+
+    return{
+        all: function(){
+            var ref = new Firebase(apiURL);
+            var sync = $firebase(ref);
+            var dataList = sync.$asArray();
+            return dataList;
+        },
+        get: function(opId){
+            var ref = new Firebase(apiURL + opId);
+            var sync = $firebase(ref);
+            var opDesc = sync.$asObject();
+            return opDesc;
+        }
+    }
 });
