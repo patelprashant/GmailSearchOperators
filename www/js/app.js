@@ -12,6 +12,7 @@ var Constants = {
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', [
     'ionic'
+    ,'ngCordova'
     , 'starter.controllers'
     , 'starter.services'
     , 'firebase'
@@ -114,7 +115,18 @@ angular.module('starter', [
         controller: 'AccountCtrl'
       }
     }
+  })
+
+  .state('tab.contacts', {
+    url: '/contacts',
+    views: {
+      'tab-contacts': {
+        templateUrl: 'templates/tab-contacts.html',
+        controller: 'ContactsCtrl'
+      }
+    }
   });
+
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
