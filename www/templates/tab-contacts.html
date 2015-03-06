@@ -1,6 +1,9 @@
 <ion-view view-title="Contacts">
     <ion-content>
-        <button class="button get-contacts" ng-click="getContactList()">Get Contacts</button>
+        <ion-header-bar class="bar-stable">
+            <button class="button" ng-click="getContactList()">Load</button>
+            <button class="button" ng-click="createContact()">New</button>
+        </ion-header-bar>
         <ion-list>
             <ion-item ng-repeat="contact in contacts">
                 {{contact.displayName}}

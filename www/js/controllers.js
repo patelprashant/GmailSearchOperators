@@ -33,9 +33,19 @@ angular.module('starter.controllers', [])
             }
 
             $scope.createContact = function () {
+                $cordovaContacts.save({"displayName": "Steve Jobs"}).then(function (result) {
+                    console.log(JSON.stringify(result));
+                }, function (error) {
+                    console.log(error);
+                });
             }
 
             $scope.removeContact = function () {
+                $cordovaContacts.remove({"displayName": "Steve Jobs"}).then(function (result) {
+                    console.log(JSON.stringify(result));
+                }, function (error) {
+                    console.log(error);
+                });
             }
         })
 
